@@ -177,13 +177,12 @@ while (x <= 400) {
   y = 50 * Math.sin(x / 50 * Math.PI )
   console.log(dot(x,y + 200,'red'));
   x++
-}
+} 
 
-for (var x = 100; x <= 300; x++) {
-    for (var y = 100; y <= Math.sqrt(2500 - (x-150)**2) + 100; y++) {
+for (var x = 50; x <= 150; x++) {
+    for (var y = 100 - Math.sqrt(2500 - (x - 100)**2); y <= Math.sqrt(2500 - (x - 100)**2) + 100 || y <= 100 - Math.sqrt(2500 - (x - 100)**2); y++) {
     console.log(dot(x,y,'green'));;  
     }
 }
-
 </script>
 </html>
