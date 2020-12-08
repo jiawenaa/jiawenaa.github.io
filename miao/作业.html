@@ -1,0 +1,163 @@
+<script>
+         var sqrt = function (n) {
+             for(var i = 0;i< n ;i += 0.00001){
+                 if((i * i - n)<0.001||n - i*i<0.001){
+                     return i
+                 }
+             }
+         }
+        console.log(sqrt(100));
+</script>
+<script>
+   var narcissistic = function (m) {
+         var a = m % 10
+         var b = (m - a) / 10 % 10
+         var c = (m - a - 10 * b) / 10 / 10 % 10
+         if (a*a*a + b*b*b + c*c*c == m) {
+             return true
+         }
+         return false
+         }
+        console.log(narcissistic(153));
+</script>
+<script>
+    var narcissistics = function(m){
+        var d = ''
+        for(var i = 100 ; i <= m ; i++){
+        var a = i % 10
+        var b = (i - a) / 10 % 10
+        var c = (i - a - 10 * b) / 10 / 10 % 10
+   
+        if (a*a*a + b*b*b + c*c*c == i) {
+           d += i + ' '
+        }
+        }
+        return d
+    }
+        console.log(narcissistics(10000));
+</script>
+<script>
+    var palindrom = function(m){
+        var sum = 1
+        for(var i = 1 ; i <= m; i++){
+            sum *= i
+        }
+        return sum
+    }
+    console.log(palindrom(10));
+</script>
+<script>
+    var weekday = function(x,y){
+        return 'wo bu hui' 
+    }
+    console.log(weekday(1,2999));
+</script>
+<script>
+    var completeNumber = function(m){
+        var sum = 1
+        for(var i = 2;i <= m / 2 ; i++){
+            if(m % i == 0){
+                sum += i
+            }
+            if (sum == m) {
+                return true
+            }
+        }
+        return false
+    }
+    console.log(completeNumber(6));
+</script>
+<script>
+    var completeNumbers = function(m){
+        var a =''
+        for(var i = 2;i <= m ; i++){
+            var sum = 0
+           for(var j = 1 ; j < i ; j++){
+               if (i % j == 0) {
+                   sum = sum + j
+               }
+               if (sum == i && i % j == 0) {
+                a += i +' '
+            }
+        }
+    }
+    return a
+    }
+    console.log(completeNumbers(1000));
+</script>
+<script>
+    var prime = function(m){
+         var a = Math.sqrt(m)
+        for(var i = 2 ; i < a ; i++){
+            if(m % i == 0){
+                return false
+            }
+        }
+        return true
+    }
+    console.log(prime(5));
+</script>
+<script>
+    var primes = function(m){
+        var a = ''
+        for(var i = 2 ; i <= m ; i++){
+            var b = 0 
+            for(var j = 1 ; j <= i ;j++){
+                if(i % j == 0){
+                    b += j   
+                }
+            }
+            if(b == 1 + i){
+                a += i + ' '     
+            }
+        }
+        return a 
+    }
+    console.log(primes(1000));
+</script>
+<script>
+var itob = function(n){
+a = String(n)
+return a
+}
+console.log(itob(234));
+</script>
+<script>
+    var lcf = function(a,b){
+        if(a<b){
+            var c = b
+            b = a
+            a = c 
+        }
+        var max = 1 
+        for(i = 1; i <= a ; i++){
+            if (a % i == 0 && b % i == 0) {
+                if (i > max) {
+                    max = i
+                }
+            }
+        }
+        return max
+    }
+    console.log(lcf(15,10));
+</script>
+<script>
+    var lcm = function(a,b){
+        if(a<b){
+            var c = b
+            b = a
+            a = c 
+        }
+        for(i = 1 ; i <= b ; i++){
+            e = i * a
+            for(j = 1; j <= a;j++){
+                f = j * b
+                if (e == f) {
+                return e
+            }
+            }
+           
+        }
+    }   
+    console.log(lcm(9,11));
+</script>

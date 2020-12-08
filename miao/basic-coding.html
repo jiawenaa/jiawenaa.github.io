@@ -295,31 +295,169 @@ while (n != 1) {
 }
 console.log('End');
 </script>
-<script type="norun" id="ch105/22">
+<script x
 
+
+
+
+
+
+
+type="norun" id="ch105/22">
+var sum = 0
+var money = 0
+for (var i = 1; i <= 12; i++) {
+     money  += 300;
+     var budget = +prompt()
+     money = money - budget
+     if (money < 0){
+         console.log(-i);
+         var k = false
+         break;
+     }
+     if (money >= 0) {
+         var left    = money % 100
+         sum = sum + money - left
+         money = left
+     }
+}
+
+if (k != false) {
+    console.log(1.2 * sum + money);
+}
 </script>
 <script type="norun" id="ch105/23">
-
+var m = +prompt()
+var n = +prompt()
+var sum = 0
+var k = 0
+for(var i = 1;i <= n; i++){
+     var num = +prompt()
+     sum += num
+     k++
+     if (sum >= m) {
+        sum = sum - num
+        k--
+     }
+}
+     console.log(n - k);
 </script>
 <script type="norun" id="ch105/24">
-
+var n = +prompt()
+var max = 0
+var num = 0
+for (var i = 1; i <= n; i++) {
+     var a = +prompt()
+     var b = +prompt()
+     if (a <= 140 && a >= 90 && b <= 90 && b >= 60) {
+         num++
+         if (num > max) {
+             max = num
+         }
+     } else {
+         num = 0
+     }   
+}
+console.log(max);
 </script>
 <script type="norun" id="ch105/25">
-
+for (var i = 1;i <= 999 ; i++) {
+     var a =i % 7;
+     var b =(i - a) / 7 % 7
+     var c =(i - a - 7 * b ) / 49 % 7
+     var d =i % 9;
+     var e =(i - d) / 9 % 9
+     var f =(i - d - 9 * e ) / 81 % 9
+    if (a == f && b == e && c == d) {
+        console.log(i ,Number('' + a + b + c),Number('' + d + e + f));
+        }
+    
+}
 </script>
 <script type="norun" id="ch105/26">
-
+var n = +prompt()
+var k = 0
+for (var i = 0; i < n; i++) {
+     var num = +prompt();
+     var a =num % 10
+     var b =(num - a) / 10 % 10
+     var c =(num - a - 10 * b) / 100 % 10
+     var d =(num - a - 10 * b - 100 * c) / 1000 % 10
+     if ((a - d - c - b) > 0) {
+         k++;
+     }    
+}
+console.log(k);
 </script>
 <script type="norun" id="ch105/27">
-
+var k = +prompt() 
+var sum = 0 
+for (var n = 1 ; ; n++) {
+     if (sum < k) {
+        sum += 1 / n ;    
+     }else {
+        console.log(n);
+        break;
+     }
+}
 </script>
 <script type="norun" id="ch105/28">
-
+var num = +prompt()
+var num1 = num
+var sum = 0
+var y = ''
+ for(var i = 0 ; i < 9 ; i++){
+     var x = num % 10
+     y = y + x + ' '
+     sum = sum + 10**i * x
+     num =(num - x) / 10
+     if (sum == num1) {
+     break
+ }
+ }
+ console.log(y);
 </script>
 <script type="norun" id="ch105/29">
-
+var num = +prompt()
+var num1 = num
+num = Math.abs(num)
+var sum = 0 
+var y = ''
+for(var i = 0 ; i < 20 ; i++){
+    var x = num % 10
+     y = (y+x);
+    sum = sum + 10**i * x
+    num =(num - x) / 10
+        if (sum == Math.abs(num1)) {
+        break
+        }               
+ }
+ if (num1 >= 0) {
+    console.log(Number(y));    
+ }  else{
+    console.log(Number(-y));
+ }
+  
 </script>
 <script type="norun" id="ch105/30">
+var m = +prompt()
+var k = +prompt()
+var m1 = m
+var i = 0
+for(k = 0;k < 100;k++){
+ var x = m1 % 10
+ m1 = (m - x) / 10
+ if(x = 3){
+ i++
+} 
+}
+if (i != k) {
+  console.log('NO');
+} else if (m % 19 != 0) {
+    console.log('NO');
+} else{
+    console.log('YES');
+}
 
 </script>
 <script type="norun" id="ch105/31">
@@ -351,4 +489,55 @@ console.log('End');
 </script>
 <script type="norun" id="ch105/40">
 
+</script>
+<script type = saf>
+var hammingDistance = function(x, y) {
+    var numx = ''
+    var numy = ''
+    do{
+        var a = x % 2
+        x = (x - a ) / 2
+        numx = a + numx
+    }    while(x > 0)
+    do {
+        var b = y % 2
+        y =(y - b) / 2
+        numy = b +numy
+    }    while(y > 0)
+   let lengthx = numx.length
+   let lengthy = numy.length
+   if (lengthx < lengthy){
+       let c = lengthy - lengthx
+       for(let d = 1;d <= c;d++){
+           numx = '0' + numx 
+       }
+   }
+    if (lengthx >= lengthy){
+       let c = lengthx - lengthy
+       for(let d = 1;d <= c;d++){
+           numy = '0' + numy 
+       }
+   }
+    var i = 0
+    var result = numx ^ numy
+    do {
+        let j = result % 10
+        result = (result - j) / 10
+        if(j == 1){
+            i++
+        }
+    } while(result > 0)
+        return i
+};
+console.log(hammingDistance(93,73));
+</script>
+<script>
+    function powerxn(x,n) {
+        if(n==0){
+            return 1
+        }
+        if(n % 2 == 0){
+            
+        }
+    }
 </script>
