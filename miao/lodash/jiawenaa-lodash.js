@@ -20,7 +20,7 @@ var  jiawenaa = function () {
     }
     return {
         chunk,
-    }
+    },
     function compact(array){
         let result = []
         for(var i = 0; i < array.length; i++ ){
