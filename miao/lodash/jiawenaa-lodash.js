@@ -16,6 +16,9 @@ var  jiawenaa = function(){
             }
             b.push(a)
         }
-        return b,
+        return b
+    }
+    return {
+        chunk,
     }
 }
