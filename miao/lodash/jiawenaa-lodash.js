@@ -44,6 +44,9 @@ var  jiawenaa = function () {
         }
         return result
     }
+    function difference(){
+        
+    }
     return {
         chunk,
         compact,
