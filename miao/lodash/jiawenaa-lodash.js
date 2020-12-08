@@ -17,7 +17,7 @@ var  jiawenaa = function () {
             b.push(a)
         }
         return b
-    }
+    };
 
     function compact(array){
         let result = []
@@ -28,7 +28,7 @@ var  jiawenaa = function () {
             }
         }
         return result
-    }
+    };
 
     function concat(array, [values]){
         let result = []
@@ -41,11 +41,11 @@ var  jiawenaa = function () {
             result.push(a[i])
         }
         return result
-    }
+    };
     return {
         chunk,
         compact,
         concat,
-    },
+    }
 
 }()
