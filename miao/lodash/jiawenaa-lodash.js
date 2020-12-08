@@ -44,12 +44,38 @@ var  jiawenaa = function () {
         }
         return result
     }
-    function difference(){
-        
+    function difference(array, ...values){
+        var a = array.length
+        var b = arguments.length 
+        var map = {}
+        var result = []
+        for(var i = 1; i < b ;i++){
+            if(Array.isArray(arguments[i])){
+                let c = arguments[i].length
+                for(var j = 0; j < c; j++){
+                    if(arguments[i][j] in map){
+                        continue    
+                    }else{
+                        map[arguments[i][j]] = 1
+                    }
+                }
+            }else{
+                map[arguments[i]] = 1
+            }
+        }
+        for(var i = 0;i < a; i++){
+            if(array[i] in map){
+                continue
+            }else{
+                result.push(array[i])
+            }
+        }
+        return result   
     }
     return {
         chunk,
         compact,
         concat,
+        difference,
     }
 }()
