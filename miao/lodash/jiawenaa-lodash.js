@@ -31,12 +31,11 @@ var  jiawenaa = function () {
     function concat(){
         let result = []
         var a = arguments.length
-
         for(var i = 0; i < a ; i++){
             let b = arguments[i]
-            let c = arguments[i].length
+            let c = b.length
             for(var j = 0; j < c ; j++){
-                result.push(arguments[i][j])
+                result.push(b[j])
             }
         }
         return result
