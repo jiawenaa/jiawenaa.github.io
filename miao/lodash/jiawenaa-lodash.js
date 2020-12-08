@@ -21,4 +21,17 @@ var  jiawenaa = function () {
     return {
         chunk,
     }
+    function compact(array){
+        let a = array[i]
+        let result = []
+        for(var i = 0; i < array.length; i++ ){
+            if(a){
+                result.push(a)
+            }
+        }
+        return result
+    }
+    return {
+        compact,
+    }
 }()
