@@ -41,9 +41,8 @@ var  jiawenaa = function () {
         return result
     }
     return {
-        chunk : chunk,
-        compact : compact,
-        concat : concat,
+        chunk,
+        compact,
+        concat,
     }
-
 }()
