@@ -1,4 +1,4 @@
-var  jiawenaa = function(){
+var  jiawenaa = function () {
     function chunk(array,size){   
         let b = []
         for(var i = 0 ; i < array.length ; i){
@@ -21,4 +21,4 @@ var  jiawenaa = function(){
     return {
         chunk,
     }
-}
+}()
