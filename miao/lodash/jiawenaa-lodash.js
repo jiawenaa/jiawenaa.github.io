@@ -28,15 +28,16 @@ var  jiawenaa = function () {
         }
         return result
     }
-    function concat(array, [values]){
+    function concat(){
         let result = []
-        let a = [values]
-        let b = a.length
-        for(var i = 0; i < array.length ; i++){
-            result.push(array[i])
-        }
-        for(var i = 0; i < b; i++){
-            result.push(a[i])
+        var a = arguments.length
+
+        for(var i = 0; i < a ; i++){
+            let b = arguments[i]
+            let c = arguments[i].length
+            for(var j = 0; j < c ; j++){
+                result.push(arguments[i][j])
+            }
         }
         return result
     }
