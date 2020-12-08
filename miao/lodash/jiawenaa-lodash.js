@@ -34,8 +34,12 @@ var  jiawenaa = function () {
         for(var i = 0; i < a ; i++){
             let b = arguments[i]
             let c = b.length
-            for(var j = 0; j < c ; j++){
-                result.push(b[j])
+            if(Arry.isArry(arguments[i])){
+                for(var j = 0; j < c ; j++){
+                    result.push(b[j])
+                }
+            }else{
+                result.push(arguments[i])
             }
         }
         return result
