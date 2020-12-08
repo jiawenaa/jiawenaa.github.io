@@ -22,9 +22,9 @@ var  jiawenaa = function () {
         chunk,
     }
     function compact(array){
-        let a = array[i]
         let result = []
         for(var i = 0; i < array.length; i++ ){
+            let a = array[i]
             if(a){
                 result.push(a)
             }
