@@ -86,11 +86,14 @@ var  jiawenaa = function () {
         }
         return array      
     }
-    function fill(array, value, [start=0], [end=array.length]){
+    function fill(array, value, start=0, end=array.length){
         for(var i = start; i < end; i++){
             array[i] = value
         }
         return array
+    }
+    function flatten(){
+
     }
     return {
         chunk,
@@ -100,5 +103,6 @@ var  jiawenaa = function () {
         drop,
         dropRight,
         fill,
+        flatten,
     }
 }()
