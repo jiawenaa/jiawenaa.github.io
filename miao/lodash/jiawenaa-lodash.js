@@ -72,22 +72,22 @@ var  jiawenaa = function () {
         }
         return result   
     }
-    function drop(array,n){
-        while(n != 0){
+    function drop(array,n=1){
+        while(n != 0 && array){
             array.shift()
             n--
         }
         return array
     }
-    function dropRight(array,n){
-        while(n != 0){
+    function dropRight(array,n=1){
+        while(n != 0 && array){
             array.pop()
             n--
         }
         return array      
     }
     function fill(){
-        
+
     }
     return {
         chunk,
