@@ -72,10 +72,30 @@ var  jiawenaa = function () {
         }
         return result   
     }
+    function drop(array,n){
+        while(n != 0){
+            array.shift()
+            n--
+        }
+        return array
+    }
+    function dropRight(array,n){
+        while(n != 0){
+            array.pop()
+            n--
+        }
+        return array      
+    }
+    function fill(){
+        
+    }
     return {
         chunk,
         compact,
         concat,
         difference,
+        drop,
+        dropRight,
+        fill,
     }
 }()
