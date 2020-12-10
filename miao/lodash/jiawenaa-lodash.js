@@ -120,6 +120,31 @@ var  jiawenaa = function () {
         }
         return b
     }
+    function head(arr){
+        if(!arr){
+            return undefined
+        }
+        else{
+            return arr[0]
+        }
+    }
+    function initial(arr){
+        if(!arr){
+            return null
+        }else{
+            arr.pop()
+            return arr
+        }
+    }
+    function indexOf(array, value, fromIndex=0){
+        
+        for(var i = fromIndex; i < array.length; i++){
+            if(array[i] === value){
+                return i
+            }
+        }
+        return undefined
+    }
     return {
         chunk,
         compact,
@@ -130,5 +155,8 @@ var  jiawenaa = function () {
         fill,
         flatten,
         flattenDeep,
+        head,
+        initial,
+        indexOf,
     }
 }()
