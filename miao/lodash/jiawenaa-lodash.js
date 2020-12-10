@@ -92,8 +92,33 @@ var  jiawenaa = function () {
         }
         return array
     }
-    function flatten(){
-
+    function flatten(arr){
+        var b = []
+        for(var i = 0 ; i < arr.length ; i++){
+            var a = arr[i]
+            if(a.length > 1){
+                for (var j = 0; j < a.length ; j++){
+                    b.push(arr[i][j])
+                }
+            }else{
+                b.push(arr[i])
+            }
+        }
+        return b
+    }
+    function flattenDeep(arr){
+        var b = []
+        for(var i = 0 ; i < arr.length ; i++){
+            var a = arr[i]
+            if(a.length > 1){
+                for (var j = 0; j < a.length ; j++){
+                    flattenDeep(arr[i][j])
+                }
+            }else{
+                b.push(arr[i])
+            }
+        }
+        return b
     }
     return {
         chunk,
@@ -104,5 +129,6 @@ var  jiawenaa = function () {
         dropRight,
         fill,
         flatten,
+        flattenDeep,
     }
 }()
