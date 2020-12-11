@@ -107,18 +107,15 @@ var  jiawenaa = function () {
         return b
     }
     function flattenDeep(arr){
-        var b = []
+        var result = []
         for(var i = 0 ; i < arr.length ; i++){
-            var a = arr[i]
-            if(a.length > 1){
-                for (var j = 0; j < a.length ; j++){
-                    flattenDeep(arr[i][j])
-                }
+            if(arr[i].length > 1){
+                flattenDeep(arr[i])
             }else{
-                b.push(arr[i])
+                result.push(arr[i])
             }
         }
-        return b
+        return result
     }
     function head(arr){
         if(!arr){
@@ -145,6 +142,86 @@ var  jiawenaa = function () {
         }
         return undefined
     }
+    function differenceBy(array, values, iteratee=_.identity){
+        var result = []
+
+    }
+    function findIndex(array, predicate=_.identity, fromIndex=0){
+        for(var i = fromIndex; i < array.length ; i++){
+            if(xxx){//条件为predivate输入的任何类型参数可以匹配上arr[i]的某项值
+                return i
+            }else{
+                return -1
+            }
+        }
+    }
+    function fromPairs(pairs){
+        if(!pairs){
+            return {}
+        }
+        var result = {}
+        for(var i = 0 ; i < pairs.length ; i++){
+            for(var j = 0 ; j < 2 ; j += 2){
+                result[pairs[i][j]] = pairs[i][j+1]
+            }
+        }
+        return result
+    }
+    function join(array,separator = ','){
+        if(!array){
+            return null
+        }
+        var result = ''
+        for(var i = 0 ; i < array.length; i++){
+            result += array[i]
+            if(i + 1 < array.length){
+                result += separator
+            }
+        }
+        return result
+    }
+    function last(array){
+        if(!last){
+            return undefined
+        }else{
+            return array.pop()
+        }
+    }
+    function lastIndexOf(array,value,fromIndex=array.length-1){
+        for(var i = fromIndex - 1 ; i < array.length ; i++){
+            if(array[i] === value){
+                return i
+            }
+        }
+        return -1
+    }
+    function pull(array,...value){
+        var arr = []
+        var map = {}
+        for(var i = 0 ; i < array.length; i++){
+            arr.push(array[i])
+        }
+        for(var j = 1 ; j < arguments.length ; j++){
+            if(!map.arguments[j]){
+                map[arguments[j]] = 1
+            }
+        }
+        for(var k = 0 ; k < array.length; k++){
+            var m = 0
+            if(arr[k] in map){
+
+            }else{
+                array[m] = arr[k]
+                m++
+            }
+        }
+        while(m != arr.length){
+            array.pop()
+            m++
+        }
+        return array
+
+    }
     return {
         chunk,
         compact,
@@ -158,5 +235,12 @@ var  jiawenaa = function () {
         head,
         initial,
         indexOf,
+        differenceBy,
+        findIndex,
+        fromPairs,
+        join,
+        last,
+        lastIndexOf,
+        pull,
     }
 }()
