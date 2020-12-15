@@ -188,6 +188,9 @@ var  jiawenaa = function () {
         }
     }
     function lastIndexOf(array,value,fromIndex=array.length-1){
+        if(fromIndex < 0){
+            return -1
+        }
         for(var i = fromIndex - 1 ; i < array.length ; i++){
             if(array[i] === value){
                 return i
@@ -195,7 +198,7 @@ var  jiawenaa = function () {
         }
         return -1
     }
-    function pull(array,...value){
+    function pull(array){
         var arr = []
         var map = {}
         for(var i = 0 ; i < array.length; i++){
@@ -206,7 +209,7 @@ var  jiawenaa = function () {
                 map[arguments[j]] = 1
             }
         }
-        for(var k = 0 ; k < array.length; k++){
+        for(var k = 0 ; k < arr.length; k++){
             var m = 0
             if(arr[k] in map){
 
@@ -220,7 +223,40 @@ var  jiawenaa = function () {
             m++
         }
         return array
-
+    }
+    function reverse(array){
+        if(!array||array.length == 1){
+            return array
+        }
+        var a = []
+        for(var i = 0 ; i < array.length ;i++){
+            a.push(array[i])
+        }
+        var j = 0
+        for(var i = array.length - 1 ; i >= 0 ;i--){
+            array[j] = a[i]
+            j++ 
+        }
+        return array
+               
+    }
+    function sortedIndex(array, value){
+        var start = 0 , end = array.length - 1
+        var mid
+        while(start < end){
+            mid = start + Math.floor(end - start)
+            if(array[mid] == value){
+                return mid
+            }else if(array[mid] > value){
+                end = mid
+            }else{
+                start = mid
+            }
+            if(start + 1 == end || start == end){
+                return end
+            }
+        }
+        
     }
     return {
         chunk,
@@ -242,5 +278,7 @@ var  jiawenaa = function () {
         last,
         lastIndexOf,
         pull,
+        reverse,
+        sortedIndex,
     }
 }()
