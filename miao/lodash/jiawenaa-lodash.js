@@ -108,9 +108,8 @@ var  jiawenaa = function () {
     }
     function flattenDeep(arr , b = []){
         for(var i = 0 ; i < arr.length ; i++){
-            var a = arr[i]
-            if(Array.isArray(a)){
-                flattenDepth(a,b)
+            if(Array.isArray(arr[i])){
+                flattenDepth(arr[i],b)
             }else{
                 b.push(arr[i])
             }
@@ -264,7 +263,7 @@ var  jiawenaa = function () {
     function flattenDepth(array, depth = 1){
         var result = []
         for(var i = 0 ; i < depth; i++){
-            if(Array.isArray(arr[i]) && depth > 0 ){
+            if(Array.isArray(array[i]) && depth > 0 ){
                 result.push(...flattenDepth(array[i],--depth))
             }
             else{
