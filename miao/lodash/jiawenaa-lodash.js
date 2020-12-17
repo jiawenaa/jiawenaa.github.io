@@ -106,16 +106,16 @@ var  jiawenaa = function () {
         }
         return b
     }
-    function flattenDeep(arr){
-        var result = []
+    function flattenDeep(arr , b = []){
         for(var i = 0 ; i < arr.length ; i++){
-            if(arr[i].length > 1){
-                flattenDeep(arr[i])
+            var a = arr[i]
+            if(Array.isArray(a)){
+                flattenDepth(a,b)
             }else{
-                result.push(arr[i])
+                b.push(arr[i])
             }
         }
-        return result
+        return b
     }
     function head(arr){
         if(!arr){
@@ -255,8 +255,23 @@ var  jiawenaa = function () {
             if(start + 1 == end || start == end){
                 return end
             }
+            if(start == start && end == end){
+                return start
+            }
         }
         
+    }
+    function flattenDepth(array, depth = 1){
+        var result = []
+        for(var i = 0 ; i < depth; i++){
+            if(Array.isArray(arr[i]) && depth > 0 ){
+                result.push(...flattenDepth(array[i],--depth))
+            }
+            else{
+                result.push(array[i])
+            }
+        }
+        return result
     }
     return {
         chunk,
@@ -280,5 +295,6 @@ var  jiawenaa = function () {
         pull,
         reverse,
         sortedIndex,
+        flattenDepth,
     }
 }()
