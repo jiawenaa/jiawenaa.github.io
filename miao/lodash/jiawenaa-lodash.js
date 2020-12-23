@@ -294,7 +294,7 @@ var  jiawenaa = function () {
                     }
                 }
             }else{
-                if(arrays[i][j] in map){
+                if(arrays[i] in map){
 
                 }else{
                     map[arrays[i]] = 1
