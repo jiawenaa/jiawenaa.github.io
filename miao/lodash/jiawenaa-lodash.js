@@ -272,6 +272,38 @@ var  jiawenaa = function () {
         }
         return result
     }
+    function nth(array,n = 0){
+        if(n < 0){
+            return array[array.length + n] 
+        }
+        else{
+            return array[n]
+        }
+    }
+    function union(arrays){
+        var map = {}
+        var result = []
+        for(var i = 0 ; i < arrays.length ; i++){
+            if(arrays.length > 1){
+                for(var j = 0 ; j < arrays[i].length ; j++){
+                    if(arrays[i][j] in map){
+
+                    }else{
+                        map[arrays[i][j]] = 1
+                        result.push(arrays[i][j])
+                    }
+                }
+            }else{
+                if(arrays[i][j] in map){
+
+                }else{
+                    map[arrays[i]] = 1
+                    result.push(arrays[i])
+                }               
+            }
+        }
+        return result
+    }
     return {
         chunk,
         compact,
@@ -295,5 +327,7 @@ var  jiawenaa = function () {
         reverse,
         sortedIndex,
         flattenDepth,
+        nth,
+        union,
     }
 }()
